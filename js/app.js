@@ -13,9 +13,16 @@ app.Router = Backbone.Router.extend({
 		var self = this;
 		self.loadProjects(function(projectsColl) {
 			self.loadContactInformation(function(contactInfoColl) {
-				if (!self.homeView)
-					self.homeView = new app.HomeView({ el: $("#content"), projects: projectsColl, contactInfos: contactInfoColl });
-				self.homeView.render();
+				self.loadSkills(function(skillsColl) {
+					if (!self.homeView)
+						self.homeView = new app.HomeView({ 
+							el: $("#content"), 
+							projects: projectsColl, 
+							contactInfos: contactInfoColl,
+							skills: skillsColl
+						});
+					self.homeView.render();
+				});
 			});
 		});
 	},
@@ -41,6 +48,12 @@ app.Router = Backbone.Router.extend({
 		if (!this.contactInfos)
 			this.contactInfos = new app.ContactInfos();
 		this.contactInfos.fetch({ success: callback });
+	},
+
+	loadSkills: function(callback) {
+		if (!this.skills)
+			this.skills = new app.Skills();
+		this.skills.fetch({ success: callback });
 	}
 });
 

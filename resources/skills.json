@@ -1,0 +1,26 @@
+[
+	{
+		"type" : "Technical",
+		"skills" : [
+			{
+				"section_name" : "Languages & Proficiencies",
+				"section_value" : "Python, Java, C, JavaScript, PHP, HTML, CSS, SQL"
+			},
+
+			{
+				"section_name" : "Libraries & Frameworks",
+				"section_value" : "jQuery, Backbone, Laravel, Bootstrap"
+			},
+
+			{
+				"section_name" : "Version Control",
+				"section_value" : "Git"
+			},
+
+			{
+				"section_name" : "Operating Systems",
+				"section_value" : "Windows, Linux(Ubuntu)"
+			}
+		]
+	}
+]
